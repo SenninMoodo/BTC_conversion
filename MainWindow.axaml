@@ -1,0 +1,49 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="120"
+		Width="300" Height="120"
+        x:Class="AvaloniaApplication1.MainWindow"
+        Title="BTC Conversion Rate">
+
+
+	<Grid Background="Orange">
+		<!-- Info row -->
+		<Grid Grid.Row="0" ColumnDefinitions="*, 1.5*, *" >
+			<StackPanel Grid.Column="0" Orientation="Vertical" Background="White" Opacity="1" >
+				<Label FontSize="10">last updated:</Label>
+				<Label FontSize="10" x:Name="UpdateLabel"></Label>
+				<Label FontSize="10" x:Name="RadioLabel"></Label>
+			</StackPanel>
+			<!-- Content -->
+			<StackPanel Grid.Column="1"  Background="White" >
+				<Label HorizontalAlignment="Center">1 BTC</Label>
+				<Label HorizontalAlignment="Center" VerticalAlignment="Center">=</Label>
+				<Label HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="ConversionLabel" Content=""></Label>
+				<Button x:Name="RefreshButton" Click="Button_Click" HorizontalAlignment="Center" Margin="5"  >
+					<Label FontSize="10">Refresh now</Label>
+				</Button>
+			</StackPanel>
+			<!-- Refresh Interval -->
+			<StackPanel Grid.Column="2"  Background="White">
+				<Label FontSize="10">Refresh Interval:</Label>
+				<Label FontSize="8">default: 5 min</Label>
+
+				<Viewbox Height="20" HorizontalAlignment="Left">
+					<RadioButton x:Name="RadioButton1min" GroupName="Refresh">1 min</RadioButton>
+				</Viewbox>
+
+				<Viewbox Height="20" HorizontalAlignment="Left">
+					<RadioButton x:Name="RadioButton2min" GroupName="Refresh">2 min</RadioButton>
+				</Viewbox>
+
+				<Viewbox Height="20" HorizontalAlignment="Left">
+					<RadioButton x:Name="RadioButton10min" GroupName="Refresh">10 min</RadioButton>
+				</Viewbox>
+
+			</StackPanel>
+		</Grid>			
+	</Grid>
+	
+</Window>
